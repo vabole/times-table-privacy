@@ -91,6 +91,18 @@
             transform: translateY(-2px);
         }
         
+        .cta-button.disabled {
+            background: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+            cursor: not-allowed;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        
+        .cta-button.disabled:hover {
+            background: rgba(255,255,255,0.1);
+            transform: none;
+        }
+        
         .nav-links {
             position: absolute;
             top: 30px;
@@ -309,7 +321,7 @@
             <h1>Times Table Practice</h1>
             <p class="subtitle">Smart Multiplication Learning</p>
             <p class="description">Master multiplication tables from 2×2 to 9×9 with our intelligent adaptive learning system. The app learns what you need to practice most and adjusts accordingly.</p>
-            <a href="https://apps.apple.com/app/times-table-practice/id123456789" class="cta-button">Download on App Store</a>
+            <span class="cta-button disabled">Download on App Store (Coming Soon)</span>
             <a href="support.html" class="cta-button">Learn More</a>
         </div>
     </div>

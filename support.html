@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Times Table Practice</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        
+        .app-name {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        h2 {
+            color: #444;
+            font-size: 1.5em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-icon {
+            font-size: 1.2em;
+        }
+        
+        p, li {
+            margin-bottom: 15px;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .highlight-box h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .faq-item {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .faq-answer {
+            color: #666;
+        }
+        
+        .contact-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .contact-box h3 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .contact-box a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #f0f0f0;
+            color: #999;
+            font-size: 0.9em;
+        }
+        
+        .nav-links {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .nav-links a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        a {
+            color: #667eea;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-links">
+            <a href="index.html">Privacy Policy</a>
+            <a href="support.html">Support</a>
+        </div>
+        
+        <h1>Support & Help</h1>
+        <div class="app-name">Times Table Practice</div>
+        <div class="subtitle">Get help with your multiplication practice journey</div>
+        
+        <div class="highlight-box">
+            <h3>🚀 Quick Start</h3>
+            <p>Times Table Practice helps you master multiplication tables from 2×2 to 9×9. The app learns which problems you find challenging and shows them more often, while reducing easy ones. Just tap "Multiply!" to begin your 60-second practice session!</p>
+        </div>
+        
+        <h2><span class="section-icon">🎯</span> How It Works</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3>Smart Learning</h3>
+                <p>The app tracks your performance and adapts question frequency based on your strengths and weaknesses.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⏱️</div>
+                <p>Response time tracking helps identify confidence levels - faster answers show mastery.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Progress Tracking</h3>
+                <p>Monitor your improvement with accuracy scores and high score tracking.</p>
+            </div>
+        </div>
+        
+        <h2><span class="section-icon">❓</span> Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">How does the smart practice work?</div>
+            <div class="faq-answer">The app monitors how quickly and accurately you answer each multiplication problem. Questions you struggle with appear more frequently, while ones you've mastered show up less often. This ensures you spend time practicing what needs the most work.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Why are some questions appearing more than others?</div>
+            <div class="faq-answer">This is intentional! The app has learned that you need more practice with certain multiplication tables. As you improve, those questions will appear less frequently and you'll see more variety.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">How can I see which problems I need to work on?</div>
+            <div class="faq-answer">Tap the "Review" button on the home screen to see your top problematic questions. This shows which multiplication problems need the most attention based on your performance.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Is my data safe and private?</div>
+            <div class="faq-answer">Absolutely! Times Table Practice doesn't collect any personal data. All your scores, progress, and learning data stays exclusively on your device. We can't see or access any of your information. <a href="index.html">Read our Privacy Policy</a></div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Can I reset my progress?</div>
+            <div class="faq-answer">Yes! To start fresh, simply delete and reinstall the app. This will clear all stored progress and learning weights, giving you a completely clean slate.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">What age group is this app designed for?</div>
+            <div class="faq-answer">Times Table Practice is perfect for elementary students (ages 7-12) learning multiplication, but it's also great for older students who want to improve their speed and accuracy, or adults refreshing their math skills.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Does the app work offline?</div>
+            <div class="faq-answer">Yes! Times Table Practice works completely offline. No internet connection is required for any features. Perfect for practicing anywhere, anytime.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">How can I improve my scores?</div>
+            <div class="faq-answer">Focus on accuracy first, then speed will naturally follow. Use the Review feature to identify your weakest areas and practice consistently. The app's adaptive system will help you improve by giving you more practice on challenging problems.</div>
+        </div>
+        
+        <h2><span class="section-icon">🎮</span> Tips for Success</h2>
+        <ul>
+            <li><strong>Practice regularly:</strong> Short, frequent sessions are more effective than long, infrequent ones</li>
+            <li><strong>Focus on accuracy:</strong> Speed will improve naturally as you build confidence</li>
+            <li><strong>Use the Review feature:</strong> Check which problems need more attention</li>
+            <li><strong>Stay patient:</strong> The app adapts to your learning pace - trust the process</li>
+            <li><strong>Celebrate progress:</strong> Watch your high score improve over time</li>
+        </ul>
+        
+        <h2><span class="section-icon">🔧</span> Troubleshooting</h2>
+        <ul>
+            <li><strong>App not responding:</strong> Force close and reopen the app</li>
+            <li><strong>Scores not saving:</strong> Make sure you have sufficient storage space on your device</li>
+            <li><strong>Questions seem too easy/hard:</strong> Keep practicing - the app will adapt to your skill level</li>
+            <li><strong>Want to start over:</strong> Delete and reinstall the app to reset all progress</li>
+        </ul>
+        
+        <div class="contact-box">
+            <h3>📧 Still Need Help?</h3>
+            <p>If you have questions, suggestions, or need additional support, we're here to help!</p>
+            <p><a href="mailto:support@safronov.nl">support@safronov.nl</a></p>
+            <p style="margin-top: 15px; font-size: 0.9em;">We typically respond within 24 hours</p>
+        </div>
+        
+        <h2><span class="section-icon">🎯</span> About the Developer</h2>
+        <p>Times Table Practice is developed by Ilia Safronov, focused on creating educational apps that make learning effective and enjoyable. The app uses evidence-based learning techniques to help students master multiplication tables efficiently.</p>
+        
+        <div class="footer">
+            <p>Times Table Practice • Version 1.0</p>
+            <p>© 2024 Ilia Safronov. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="index.html">Privacy Policy</a> • 
+                <a href="support.html">Support</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

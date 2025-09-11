@@ -18,4 +18,4 @@ Times Table Practice is an iOS app that helps users master multiplication tables
 This privacy policy is automatically deployed via GitHub Pages when changes are pushed to the main branch.
 
 ## Contact
-For questions about the privacy policy, contact: support@safronov.nl
+For questions about the privacy policy, contact: support@safronov.nl# Deploy trigger

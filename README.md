@@ -5,6 +5,7 @@ This repository hosts the privacy policy and support pages for the Times Table P
 ## Live URLs
 - **Privacy Policy**: https://vabole.github.io/times-table-privacy/
 - **Support Page**: https://vabole.github.io/times-table-privacy/support.html
+- **Marketing Page**: https://vabole.github.io/times-table-privacy/marketing.html
 
 ## About the App
 Times Table Practice is an iOS app that helps users master multiplication tables through adaptive learning. The app operates entirely on-device with no data collection.

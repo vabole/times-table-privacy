@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Times Table Practice - Smart multiplication learning app with adaptive practice. Master times tables 2x2 through 9x9 with personalized difficulty adjustment.">
+    <meta name="keywords" content="times tables, multiplication practice, math facts, adaptive learning, elementary math, mental math training, multiplication drills, educational app">
+    <title>Times Table Practice - Smart Multiplication Learning App</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 25px;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5em;
+            font-weight: 300;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero .subtitle {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .hero .description {
+            font-size: 1.1em;
+            margin-bottom: 50px;
+            opacity: 0.85;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .cta-button:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        
+        .nav-links {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: white;
+        }
+        
+        .section {
+            padding: 80px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 60px;
+            color: #333;
+            font-weight: 300;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 40px 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: white;
+        }
+        
+        .feature h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .feature p {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        .how-it-works {
+            background: #f8f9fa;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .step {
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        .benefits {
+            background: white;
+        }
+        
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .benefit {
+            display: flex;
+            align-items: flex-start;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+        
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .social-proof {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .footer {
+            background: #333;
+            color: white;
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+        .footer-nav {
+            margin-bottom: 30px;
+        }
+        
+        .footer-nav a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            margin: 0 20px;
+        }
+        
+        .footer-nav a:hover {
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2em;
+            }
+            
+            .nav-links {
+                position: static;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="nav-links">
+            <a href="index.html">Privacy</a>
+            <a href="support.html">Support</a>
+            <a href="marketing.html">About</a>
+        </div>
+        
+        <div class="hero-content">
+            <div class="app-icon">🧮</div>
+            <h1>Times Table Practice</h1>
+            <p class="subtitle">Smart Multiplication Learning</p>
+            <p class="description">Master multiplication tables from 2×2 to 9×9 with our intelligent adaptive learning system. The app learns what you need to practice most and adjusts accordingly.</p>
+            <a href="https://apps.apple.com/app/times-table-practice/id123456789" class="cta-button">Download on App Store</a>
+            <a href="support.html" class="cta-button">Learn More</a>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="container">
+            <h2 class="section-title">Why Times Table Practice Works</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Smart Adaptive Learning</h3>
+                    <p>Our algorithm tracks your performance and automatically adjusts question frequency. Struggle with 7×8? You'll see it more often. Master 2×3? It appears less frequently.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">⏱️</div>
+                    <h3>Response Time Intelligence</h3>
+                    <p>Speed matters for multiplication fluency. We track how quickly you answer each question to identify true mastery versus lucky guesses.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Focused Practice Sessions</h3>
+                    <p>60-second focused rounds keep you engaged. Perfect for quick practice sessions between activities or dedicated study time.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <h3>Progress Tracking</h3>
+                    <p>Monitor your improvement with accuracy scores, response time tracking, and detailed review of your most challenging problems.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Privacy First</h3>
+                    <p>All learning data stays on your device. No data collection, no analytics, no tracking. Just pure, focused learning.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">📱</div>
+                    <h3>Works Offline</h3>
+                    <p>Practice anywhere, anytime. No internet connection required. Perfect for car rides, waiting rooms, or anywhere you want to practice.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Start Practicing</h3>
+                    <p>Begin with completely random questions from all multiplication tables (2×2 through 9×9).</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>System Learns</h3>
+                    <p>The app tracks your accuracy and response time for each multiplication problem.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Adapts to You</h3>
+                    <p>Questions you find challenging appear more frequently. Easy ones show up less often.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Master Everything</h3>
+                    <p>As you improve, the app continues adapting until you've mastered all multiplication tables.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section benefits">
+        <div class="container">
+            <h2 class="section-title">Perfect For</h2>
+            <div class="benefits-list">
+                <div class="benefit">
+                    <div class="benefit-icon">👨‍👩‍👧‍👦</div>
+                    <div>
+                        <h3>Parents</h3>
+                        <p>Help your children build confidence in math with adaptive practice that prevents frustration and builds on success.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit">
+                    <div class="benefit-icon">🏫</div>
+                    <div>
+                        <h3>Teachers</h3>
+                        <p>Assign personalized practice that adapts to each student's needs. Perfect for homework or classroom warm-ups.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit">
+                    <div class="benefit-icon">🎓</div>
+                    <div>
+                        <h3>Students</h3>
+                        <p>Build multiplication fluency at your own pace with a system that knows exactly what you need to practice.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit">
+                    <div class="benefit-icon">👤</div>
+                    <div>
+                        <h3>Adults</h3>
+                        <p>Refresh your mental math skills or help your children learn with an app designed for efficient learning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section social-proof">
+        <div class="container">
+            <h2 class="section-title">Built with Educational Excellence</h2>
+            <p style="font-size: 1.2em; margin-bottom: 40px; opacity: 0.9;">Times Table Practice uses evidence-based learning techniques to help students achieve multiplication fluency efficiently and effectively.</p>
+            
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">64</div>
+                    <p>Multiplication Problems<br>Covered (2×2 to 9×9)</p>
+                </div>
+                
+                <div class="stat">
+                    <div class="stat-number">4+</div>
+                    <p>Age Groups<br>Elementary to Adult</p>
+                </div>
+                
+                <div class="stat">
+                    <div class="stat-number">0</div>
+                    <p>Data Collection<br>Complete Privacy</p>
+                </div>
+                
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <p>Offline Capable<br>Practice Anywhere</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="container">
+            <div class="footer-nav">
+                <a href="index.html">Privacy Policy</a>
+                <a href="support.html">Support</a>
+                <a href="marketing.html">About</a>
+                <a href="mailto:support@safronov.nl">Contact</a>
+            </div>
+            
+            <p>© 2024 Ilia Safronov. Times Table Practice.</p>
+            <p style="margin-top: 10px; opacity: 0.7;">Helping students master multiplication tables through intelligent, adaptive practice.</p>
+        </div>
+    </div>
+</body>
+</html>
